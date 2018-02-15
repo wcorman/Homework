@@ -1,17 +1,15 @@
+<div class="flex-container  p-3 " style="display: flex; flex-wrap: wrap; flex-direction: row;">
 
   <% @post.each do |post| %>
 
-  <div class="flex-container" style="display: flex; flex-wrap: wrap; align-content: flex-start">
+    <div style="margin-top:30px; margin-left:0px;" class="flex-item col-xl-4 col-lg-6 col-md-12">
+      <div class="card" style="padding: 12px;">
+        <div class="form-inline">
+          <p class="card-text">
+            <%= link_to post.title, post_path(post) %></p>
+        </div>
 
-      <div style="margin:15px; margin-left:30px;" class="card col-lg-4">
-        <div class="" style="padding: 10px;">
-          <div class="form-inline">
-            <p class="card-text">
-              <%= link_to post.title, post_path(post) %></p>
-          </div>
-
-          <p class="card-text" style="  display: block;
-      width: 95%;
+        <p class="card-text" style="
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;"><%= post.body %></p>
@@ -19,6 +17,5 @@
       </div>
     </div>
 
-  </div>
-
-<% end %>
+  <% end %>
+</div>

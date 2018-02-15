@@ -1,3 +1,31 @@
 .nav-link{
   color: #307BF6;
 }
+
+h1 {
+  padding: 20px
+
+}
+.form-control {
+width:98%;
+padding: 10px
+}
+
+.new_post {
+padding: 20px
+
+}
+
+.affix {
+    top: 0;
+    width: 100%;
+}
+
+.affix + .container-fluid {
+    padding-top: 40px;
+}
+#navbar {
+  position: fixed;
+
+
+}

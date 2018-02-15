@@ -3,25 +3,26 @@
   <head>
     <title>BlogOnRails</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-sm bg-light navbar-light">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a style="color:#307BF6"class="nav-link" href="#">Blog On Rails</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">New Post</a>
-        </li>
+    <nav id="navbar" class="navbar affix bg-light navbar-light">
+      <ul class="nav">
+        <a class="nav-link" href="/">Blog On Rails</a>
       </ul>
+
+      <ul class="nav ml-auto">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="http://localhost:3000/posts/new">New Post</a>
+      </ul>
+
     </nav>
+    <div class="container-fluid">
+
     <%= yield %>
+  </div>
+
   </body>
 </html>

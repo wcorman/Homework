@@ -16,6 +16,9 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find params[:id]
+    @comment = Comment.new
+    @comments = @post.comments
+
   end
 
   def create
@@ -52,4 +55,16 @@ end
     @post.destroy
     redirect_to posts_path
   end
+end
+
+private
+
+def post_params
+  # `require` will extract a nested hash from the params by
+  # its key's name.
+  params.require(:post).permit(:title, :body)
+  # when using `require`, you must permit every field
+  # by their name (as symbols) from your form. Otherwise,
+  # Rails will give you this error, ActiveModel::ForbiddenAttributesError
+  # when trying to create the model instance. This is a security measure.
 end
