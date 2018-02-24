@@ -26,6 +26,20 @@ padding: 20px
 }
 #navbar {
   position: fixed;
+  z-index: 9;
+}
 
+@keyframes star-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+
+
+}
+
+#star {
+  animation-name: star-rotate;
+  animation-duration: 12s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 
 }

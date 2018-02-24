@@ -1,6 +1,10 @@
 <br>
+<% if flash[:alert] %>
+  <div class="alert alert-warning" style="margin-top:20px"><%= flash[:alert] %></div>
+<% end %>
 <h2><%= @post.title %></h2>
 <p> <%= @post.body %></p>
+<p> Created by <%= @post.user.first_name %> </p>
 
 <div style="margin-bottom:18px">
   <small>
@@ -43,6 +47,11 @@
           <%= time_ago_in_words(comment.created_at) %>
           ago
         </small>
+          •
+          <small>
+            by
+            <%= (comment.user.first_name) %>
+          </small>
           •
           <small>
             <%= link_to 'Delete',

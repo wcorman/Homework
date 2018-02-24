@@ -8,17 +8,47 @@
   </head>
 
   <body>
-    <nav id="navbar" class="navbar affix bg-light navbar-light">
+    <nav id="navbar" class="navbar affix navbar-light" style="background-color:#EDEDED;">
       <ul class="nav">
         <a class="nav-link" href="/">Blog On Rails</a>
       </ul>
 
       <ul class="nav ml-auto">
-        <a class="nav-link" href="/">Home</a>
+
+        <% if user_signed_in? %>
+        <% if current_user.is_admin? %>
+        <div id="star" class="" style="height:25px; margin-top:7px; ">
+          <%= image_tag(
+          "star.png",
+          style: "height: 25px"
+          ) %>
+        </div>
+
+        <% end %>
+          <span class="nav-link"><%= link_to ("Hello, " + current_user.first_name) , edit_user_path(current_user) %></span>
+
+          <span class="nav-link"><%= link_to ("Sign out"), sessions_path, method: :delete %></span>
+
+          <% else %>
+          <a class="nav-link" href="/users/new">Sign up</a>
+          <span class="nav-link"><%= link_to ("Sign In"), new_sessions_path %></span>
+
+          <%end%>
+
         <a class="nav-link" href="http://localhost:3000/posts/new">New Post</a>
+
       </ul>
 
     </nav>
+    <div class="container-fluid">
+
+    <% if flash[:alert].present? %>
+      <div class="alert alert-warning" style="margin-top:20px"><%= flash[:alert] %></div>
+    <% end %>
+    <% if flash[:notice].present? %>
+      <div class="alert alert-success" style="margin-top:20px"><%= flash[:notice] %></div>
+    <% end %>
+  </div>
 
     <div class="container-fluid">
 
