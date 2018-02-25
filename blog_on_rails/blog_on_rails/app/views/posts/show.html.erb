@@ -1,0 +1,57 @@
+<br>
+<h2><%= @post.title %></h2>
+<p> <%= @post.body %></p>
+
+<div style="margin-bottom:18px">
+  <small>
+    Posted
+    <%= time_ago_in_words(@post.created_at) %>
+    ago
+  </small>
+</div>
+
+<div>
+  <button type="button" class="btn btn-outline-primary">  <%= link_to 'Edit', edit_post_path(@post) %></button>
+  <button type="button" class="btn btn-outline-primary"><%= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: 'Are you sure?'}%></button>
+</div>
+<br>
+
+<h4>Comment</h4>
+
+<%= form_for [@post, @comment] do |f| %>
+  <% if @comment.errors.present? %>
+    <p>
+      <%= @comment.errors.full_messages.join(', ') %>
+    </p>
+  <% end %>
+
+  <div>
+    <%= f.text_area :body, class: "form-control", placeholder: "What's on your mind?" %>
+  </div>
+
+  <%= f.submit "Submit", class: "btn btn-outline-primary mt-3"%>
+<% end %>
+
+<br>
+<div class="comment-list">
+  <% @comments.each do |comment| %>
+    <div class="comment-list-item">
+      <p>
+        <%= comment.body %> <br />
+        <small>
+          Commented
+          <%= time_ago_in_words(comment.created_at) %>
+          ago
+        </small>
+          •
+          <small>
+            <%= link_to 'Delete',
+              comment_path(comment),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }
+            %>
+          </small>
+      </p>
+    </div>
+  <% end %>
+</div>

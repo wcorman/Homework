@@ -1,0 +1,17 @@
+<%= form_for @post do |f| %>
+<% if @post.errors.present? %>
+  <p><%= @post.errors.full_messages.join(', ') %></p>
+<% end %>
+
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control", placeholder: "Enter title" %>
+  </div>
+<br>
+  <div>
+    <%= f.label :body%>
+    <%= f.text_area :body, class: "form-control", placeholder: "Enter content" %>
+  </div>
+
+  <%= f.submit class: "btn btn-outline-primary mt-3"%>
+<% end %>

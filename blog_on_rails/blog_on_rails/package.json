@@ -1,0 +1,7 @@
+{
+  "name": "blog_on_rails",
+  "private": true,
+  "dependencies": {
+    "pg": "^7.4.1"
+  }
+}
