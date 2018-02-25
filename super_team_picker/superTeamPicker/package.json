@@ -1,0 +1,23 @@
+{
+  "name": "superteampicker",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www",
+    "db:create": "createdb --echo super_team_picker_dev",
+    "db:drop": "dropdb --echo --if -exists super_team_picker_dev"
+  },
+  "dependencies": {
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "express": "~4.15.5",
+    "knex": "^0.14.2",
+    "lodash": "^4.17.5",
+    "morgan": "~1.9.0",
+    "nodemon": "^1.14.12",
+    "pg": "^7.4.1",
+    "serve-favicon": "~2.4.5"
+  }
+}

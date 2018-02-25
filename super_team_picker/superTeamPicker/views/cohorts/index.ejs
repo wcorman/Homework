@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+
+<div class="posts-list">
+  <% for (let cohort of cohorts) { %>
+    <div  class="card mb-2" style="padding: 10px;">
+     <div class="form-inline">
+      <img  class="rounded-circle" style="width:45px; height:45px;"src="<%= cohort.logoUrl %>" />
+      <p class="card-text ml-2"><%= cohort.name %></p>
+      </div>
+
+        <p class="card-text"><%= cohort.members %></p>
+        <p class="card-text"><strong>Created at:</strong> <%= cohort.created_at %></p>
+
+
+        <div class="row ml-0">
+        <a class="btn btn-primary" href="/cohorts/<%= cohort.id %>" role="button">Show cohort</a>
+        </div>
+
+    </div>
+  <% } %>
+</div>
+
+<%- include('../partials/footer') %>
