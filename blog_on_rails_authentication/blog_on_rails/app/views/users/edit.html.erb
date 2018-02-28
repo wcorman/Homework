@@ -1,5 +1,5 @@
 
-<div class="container-fluid p-2" style="border: solid; border-radius:10px; margin-top:20px">
+<div class="container-fluid p-2" style="border: solid; border-width:2px; border-radius:10px; margin-top:20px">
   <h3 >Edit profile:</h3>
 
   <%= form_for @user do |f| %>
@@ -35,6 +35,6 @@
   <%= f.label "new_password_confirmation" %>
   <%= f.password_field :password_confirmation, class: "form-control"%>
 </div>
-<%= f.submit class: "btn btn-outline-primary mt-3"%>
+<%= f.submit 'Change Password', class: "btn btn-outline-primary mt-3"%>
 <% end %>
 </div>

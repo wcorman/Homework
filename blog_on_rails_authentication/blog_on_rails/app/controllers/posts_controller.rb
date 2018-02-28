@@ -28,7 +28,9 @@ class PostsController < ApplicationController
   def create
     # In rails, form data, URL params and query params are all in
     # the `params` object which is available in controllers.
+
     @post = Post.new post_params
+    @post.user = current_user
 
     if @post.save
       redirect_to post_path(@post)

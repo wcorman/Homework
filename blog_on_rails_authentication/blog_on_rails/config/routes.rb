@@ -19,4 +19,5 @@ end
 
   get('/', { to: 'posts#index', as: :root })
 
+
 end
