@@ -5,13 +5,13 @@ let wrongCount = 0
 let winCount = 0
 console.log(wordArray)
 
+// Audio files
 const slam = () =>
   new Audio(`assets/slam.wav`);
 
 const cheer = () =>
   new Audio(`assets/cheer.wav`);
 
-console.log(slam().duration)
 $(() => {
 
   // highlight letter on mouse click
@@ -22,13 +22,12 @@ $(() => {
 
 
 
-  // push selected letter into letter 'bank'
   $('.alphabet').on('click', '.letter', event => {
     let rightCount = 0
 
     for (i = 0; i < mysteryWord.length; i++) {
       if ((($(`.correct:eq(${i})`).html()).toUpperCase()) == event.target.innerHTML) {
-        // writes the correctly guessed letter onto the page
+        // shows the correctly guessed letter in it's appropriate spot
         $(`.correct:eq(${i})`).removeClass('hide')
 
         console.log(`wrong: ${wrongCount}`)
@@ -42,10 +41,6 @@ $(() => {
         console.log(`wrong: ${wrongCount}`)
       }
     }
-    // else if ((wordArray[i].toUpperCase()) !== event.target.innerHTML){
-    //   bank.push(event.target.innerHTML.slice(0, -1))
-    //   console.log(`bank: ${bank}`)
-    // }
 
 
     if (winCount == mysteryWord.length) {
