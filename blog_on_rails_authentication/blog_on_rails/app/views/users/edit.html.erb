@@ -1,0 +1,40 @@
+
+<div class="container-fluid p-2" style="border: solid; border-width:2px; border-radius:10px; margin-top:20px">
+  <h3 >Edit profile:</h3>
+
+  <%= form_for @user do |f| %>
+  <div>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, class: "form-control", placeholder: "Enter first name" %>
+  </div>
+  <div>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name, class: "form-control", placeholder: "Enter last name" %>
+  </div>
+  <div>
+    <%= f.label :email %>
+    <%= f.email_field :email, class: "form-control", placeholder: "Enter email" %>
+  </div>
+  <%= f.submit class: "btn btn-outline-primary mt-3" %>
+<% end %>
+
+<hr>
+
+<h3>Change password</h3>
+
+<%= form_for @user, url: update_password_path(@user), method: :patch  do |f| %>
+<div>
+  <%= f.label "current_password" %>
+  <%= f.password_field :current_password, class: "form-control"%>
+</div>
+<div>
+  <%= f.label "new_password" %>
+  <%= f.password_field :password, class: "form-control"%>
+</div>
+<div>
+  <%= f.label "new_password_confirmation" %>
+  <%= f.password_field :password_confirmation, class: "form-control"%>
+</div>
+<%= f.submit 'Change Password', class: "btn btn-outline-primary mt-3"%>
+<% end %>
+</div>

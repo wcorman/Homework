@@ -1,0 +1,46 @@
+.nav-link {
+  color: #307BF6;
+}
+
+h1 {
+  padding: 20px;
+}
+
+.form-control {
+  width: 98%;
+  padding: 10px;
+}
+
+.new_post {
+  padding: 20px;
+}
+
+.affix {
+  top: 0;
+  width: 100%;
+}
+
+.affix + .container-fluid {
+  padding-top: 40px;
+}
+
+#navbar {
+  position: fixed;
+  z-index: 9;
+}
+@keyframes star-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#star {
+  animation-name: star-rotate;
+  animation-duration: 14s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
