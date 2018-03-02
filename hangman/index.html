@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Hangman</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css" type="text/css" media="screen" charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="index.js"></script>
+</head>
+
+<body>
+  <!-- KEYBOARD -->
+  <div class="alphabet">
+    <div class="letter">A</div>
+    <div class="letter">B</div>
+    <div class="letter">C</div>
+    <div class="letter">D</div>
+    <div class="letter">E</div>
+    <div class="letter">F</div>
+    <div class="letter">G</div>
+    <div class="letter">H</div>
+    <div class="letter">I</div>
+    <div class="letter">J</div>
+    <div class="letter">K</div>
+    <div class="letter">L</div>
+    <div class="letter">M</div>
+    <div class="letter">N</div>
+    <div class="letter">O</div>
+    <div class="letter">P</div>
+    <div class="letter">Q</div>
+    <div class="letter">R</div>
+    <div class="letter">S</div>
+    <div class="letter">T</div>
+    <div class="letter">U</div>
+    <div class="letter">V</div>
+    <div class="letter">W</div>
+    <div class="letter">X</div>
+    <div class="letter">Y</div>
+    <div class="letter">Z</div>
+    <hr>
+    
+    <!--mystery word area-->
+    <div class="solution" style="width: 1000px">
+      <div class="correctLetter"></div>
+    </div>
+
+    <div class="spaces" style="margin-left:40px; width: 1000px">
+    </div>
+<br>
+
+
+<!-- Gallows -->
+<div class="gallows">
+<img id="gallows" src="./assets/gallows.jpg" alt="" style="height:500px">
+</div>
+
+<!-- If user loses, this div is shown -->
+<div class="lose hide">
+<h1 style="text-align:center; color:red">WASTED</h1>
+</div>
+
+<!-- If user wins, this div is shown -->
+<div class="win hide">
+<h1 style="text-align:center; color:green">CONGRATS!</h1>
+</div>
+
+
+  </div>
+
+
+
+
+
+</body>
+
+</html>
