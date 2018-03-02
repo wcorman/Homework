@@ -11,9 +11,11 @@
 </head>
 
 <body>
+  <!-- KEYBOARD -->
   <div class="alphabet">
     <div class="letter">A</div>
     <div class="letter">B</div>
+    <div class="letter">C</div>
     <div class="letter">D</div>
     <div class="letter">E</div>
     <div class="letter">F</div>
@@ -39,15 +41,24 @@
     <div class="letter">Z</div>
     <hr>
     <!--mystery word area-->
-    <div class="solution">
+    <div class="solution" style="width: 1000px">
       <div class="correctLetter"></div>
     </div>
 
-    <div class="spaces">
+    <div class="spaces" style="margin-left:40px; width: 1000px">
     </div>
 <br>
+
+
+<!-- Gallows -->
 <div class="gallows">
-<img src="./assets/gallows.jpg" alt="" style="height:500px">
+<img id="gallows" src="./assets/gallows.jpg" alt="" style="height:500px">
+</div>
+<div class="lose hide">
+<h1 style="text-align:center; color:red">WASTED</h1>
+</div>
+<div class="win hide">
+<h1 style="text-align:center; color:green">CONGRATS!</h1>
 </div>
 
 
